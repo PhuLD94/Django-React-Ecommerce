@@ -2,7 +2,6 @@ import { useAuthStore } from '@/stores/auth'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import Cookies from 'js-cookie'
-import apiInstance from '@/axios'
 
 export const login = async (email, password) => {
     try {
@@ -90,5 +89,4 @@ export const isAccessTokenExpired = (access_token) => {
         console.log(error)
         return true
     }
-
 }

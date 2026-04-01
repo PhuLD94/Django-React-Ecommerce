@@ -20,7 +20,13 @@ export const login = async (email, password) => {
 
 export const register = async (full_name, email, phone, password, password2) => {
     try {
-        const { data } = await axios.post('user/register/', { full_name, email, phone, password, password2 })
+        const { data } = await axios.post('user/register/', {
+            username: full_name,
+            email,
+            phone_number: phone,
+            password,
+            password2,
+        })
         await login(email, password)
 
         return { data, error: null }
